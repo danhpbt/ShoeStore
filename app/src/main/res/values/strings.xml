@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="app_title">Shoe Store</string>
+    <string name="login">Log in</string>
+    <string name="email_address">EMAIL ADDRESS:</string>
+    <string name="password">PASSWORD:</string>
+    <string name="sign_in">Sign In:</string>
+    <string name="existing_account">Existing Account</string>
+    <string name="shoe_des">Shoe description</string>
+    <string name="hello_shoe">Hello Shoes!</string>
+    <string name="welcome_shoe">The easiest way to order your favorite shoes from your phone!</string>
+    <string name="next">Next</string>
+    <string name="instroction_sneaker">Sneaker Instuction</string>
+    <string name="detail_sneaker">Keep these five tips in mind before tossing your shoes in the washing machine:\n- Remove the laces before washing.\n- Wash those laces while you’re at it.\n- Pretreat badly soiled sneakers.\n- Use cold water, and don’t overdo it with the detergent.\n- Air-dry your sneakers.</string>
+    <string name="shoe_name">Shoe Name:</string>
+    <string name="company">Company:</string>
+    <string name="shoe_size">Shoe Size:</string>
+    <string name="description">Description:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="logout">Log Out</string>
+    <string name="title_login">Log In</string>
+    <string name="title_welcome">Welcome</string>
+    <string name="title_instruction">Instruction</string>
+    <string name="title_shoe_list">Shoe List</string>
+    <string name="title_shoe_detail">Shoe Detail</string>
+    <string name="validate_shoe_name">Please enter shoe name</string>
+    <string name="validate_company">Please enter company</string>
+    <string name="validate_shoe_size">Please enter shoe size</string>
+    <string name="validate_description">Please enter description</string>
+    <string name="card_shoe_name">Shoe Name</string>
+    <string name="card_company">Company</string>
+    <string name="card_shoe_size">Size:</string>
+    <string name="card_shoe_size_ex">80</string>
+    <string name="card_description">Description</string>
+</resources>
