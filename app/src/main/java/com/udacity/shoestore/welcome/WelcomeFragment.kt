@@ -13,7 +13,6 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 import com.udacity.shoestore.login.LogInFragmentDirections
 
 class WelcomeFragment : Fragment() {
-    private lateinit var viewModel: WelcomeViewModel
     private lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
@@ -30,9 +29,6 @@ class WelcomeFragment : Fragment() {
         )
 
         binding.btNext.setOnClickListener { goInstructionScreen() }
-        // Get the viewmodel
-        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-        binding.welcomeViewModel = viewModel
 
         return binding.root;
     }
