@@ -2,9 +2,7 @@ package com.udacity.shoestore.list
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -42,7 +40,25 @@ class ShoeListFragment : Fragment() {
             (activity as MainActivity).addShoe(shoe)
         }
 
+        setHasOptionsMenu(true)
+
         return binding.root;
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menuLogOut -> onLogOut()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun onLogOut()
+    {
+        findNavController().popBackStack(R.id.logInFragment, false)
     }
 
     fun goShoeDetailScreen() {

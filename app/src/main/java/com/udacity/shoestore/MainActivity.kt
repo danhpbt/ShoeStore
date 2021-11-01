@@ -49,18 +49,6 @@ class MainActivity : AppCompatActivity() {
         Timber.plant(Timber.DebugTree())
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menuLogOut -> onLogOut()
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     //Use back button on Toolbar
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp();
@@ -77,11 +65,6 @@ class MainActivity : AppCompatActivity() {
         else{
             super.onBackPressed();
         }
-    }
-
-    private fun onLogOut()
-    {
-        navController.popBackStack(R.id.logInFragment, false)
     }
 
     fun addShoe(shoe : Shoe)
