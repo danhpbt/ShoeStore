@@ -69,13 +69,7 @@ class ShoeDetailFragment : Fragment() {
             return
         }
 
-        val name = binding.etShoeName.text.toString()
-        val company = binding.etCompany.text.toString()
-        val size = binding.etSize.text.toString().toDoubleOrNull() ?: 0.0
-        val description = binding.etDescription.text.toString()
-
-        val shoe = Shoe(name, size, company, description)
+        var shoe = binding.shoeDetailViewModel?.shoe?.value
         findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(shoe))
-        //findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
     }
 }
