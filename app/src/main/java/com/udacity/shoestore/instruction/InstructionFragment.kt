@@ -12,7 +12,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
-    private lateinit var viewModel: InstructionViewModel
     private lateinit var binding: FragmentInstructionBinding
 
     override fun onCreateView(
@@ -29,10 +28,6 @@ class InstructionFragment : Fragment() {
         )
 
         binding.btNext.setOnClickListener { goShoeListScreen() }
-
-        // Get the viewmodel
-        viewModel = ViewModelProvider(this).get(InstructionViewModel::class.java)
-        binding.instructionViewModel = viewModel
 
         return binding.root;
     }

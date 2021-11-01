@@ -14,7 +14,7 @@ import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailFragment : Fragment() {
-    private lateinit var viewModel: ShoeDetailViewModel
+    private var _shoe = Shoe("", 0.0, "", "")
     private lateinit var binding: FragmentShoeDetailBinding
 
     override fun onCreateView(
@@ -33,9 +33,7 @@ class ShoeDetailFragment : Fragment() {
         binding.btSave.setOnClickListener { saveClick() }
         binding.btCancel.setOnClickListener { cancelClick() }
 
-        // Get the viewmodel
-        viewModel = ViewModelProvider(this).get(ShoeDetailViewModel::class.java)
-        binding.shoeDetailViewModel = viewModel
+        binding.shoe = _shoe
 
         return binding.root;
     }
@@ -69,7 +67,7 @@ class ShoeDetailFragment : Fragment() {
             return
         }
 
-        var shoe = binding.shoeDetailViewModel?.shoe?.value
+        var shoe = binding.shoe
         findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(shoe))
     }
 }

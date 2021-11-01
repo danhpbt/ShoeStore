@@ -15,7 +15,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.udacity.shoestore.databinding.ActivityMainBinding
 import com.udacity.shoestore.list.ShoeListFragment
-import com.udacity.shoestore.login.LogInViewModel
 import com.udacity.shoestore.models.Shoe
 import java.util.*
 

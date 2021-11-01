@@ -17,7 +17,6 @@ import com.udacity.shoestore.models.Shoe
 import java.util.*
 
 class ShoeListFragment : Fragment() {
-    private lateinit var viewModel: ShoeListViewModel
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(
@@ -34,10 +33,6 @@ class ShoeListFragment : Fragment() {
         )
 
         binding.fabAdd.setOnClickListener { goShoeDetailScreen() }
-
-        // Get the viewmodel
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
-        binding.shoeListViewModel = viewModel
 
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
