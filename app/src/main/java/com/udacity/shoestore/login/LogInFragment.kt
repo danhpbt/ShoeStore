@@ -13,6 +13,7 @@ import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 class LogInFragment : Fragment() {
 
+    private lateinit var viewModel: LogInViewModel
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -27,6 +28,10 @@ class LogInFragment : Fragment() {
             container,
             false
         )
+
+        // Get the viewmodel
+        viewModel = ViewModelProvider(this).get(LogInViewModel::class.java)
+        binding.logInViewModel = viewModel
 
         binding.btSignin.setOnClickListener { goWelcomeScreen ()}
         binding.btExistingAcc.setOnClickListener { goWelcomeScreen()  }

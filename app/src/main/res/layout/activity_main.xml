@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- TODO Add a MainViewModel variable to the layout for Shoe list -->
     <data>
         <variable
             name="mainViewModel"

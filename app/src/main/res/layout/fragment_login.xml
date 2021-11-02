@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO Add a LogInViewModel variable to the layout for two-ways databinding EditText-->
+    <data>
+        <variable
+            name="logInViewModel"
+            type="com.udacity.shoestore.login.LogInViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -36,6 +43,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:inputType="textEmailAddress"
+            android:text="@={logInViewModel.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_email" />
@@ -59,6 +67,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:inputType="textPassword"
+            android:text="@={logInViewModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_password" />
