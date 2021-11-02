@@ -10,11 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.SharedShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailFragment : Fragment() {
     private var _shoe = Shoe("", 0.0, "", "")
+    lateinit var shoeViewModel : SharedShoeViewModel
     private lateinit var binding: FragmentShoeDetailBinding
 
     override fun onCreateView(
@@ -32,6 +34,8 @@ class ShoeDetailFragment : Fragment() {
 
         binding.btSave.setOnClickListener { saveClick() }
         binding.btCancel.setOnClickListener { cancelClick() }
+
+        shoeViewModel = ViewModelProvider(requireActivity()).get(SharedShoeViewModel::class.java)
 
         binding.shoe = _shoe
 
@@ -68,6 +72,7 @@ class ShoeDetailFragment : Fragment() {
         }
 
         var shoe = binding.shoe
-        findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(shoe))
+        shoeViewModel.setShoe(shoe!!)
+        findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
     }
 }

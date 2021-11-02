@@ -33,6 +33,6 @@ class InstructionFragment : Fragment() {
     }
 
     fun goShoeListScreen() {
-        findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment(null))
+        findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment())
     }
 }

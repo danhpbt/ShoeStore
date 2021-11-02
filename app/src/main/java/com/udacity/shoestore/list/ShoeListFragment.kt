@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivity
 import com.udacity.shoestore.R
+import com.udacity.shoestore.SharedShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ShoeCardBinding
 import com.udacity.shoestore.models.Shoe
@@ -34,11 +35,10 @@ class ShoeListFragment : Fragment() {
 
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        var shoe = ShoeListFragmentArgs.fromBundle(arguments!!).shoeDetail
-        if (shoe != null)
-        {
-            (activity as MainActivity).addShoe(shoe)
-        }
+        var shoeViewModel = ViewModelProvider(requireActivity()).get(SharedShoeViewModel::class.java)
+        shoeViewModel.shoe.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            (activity as MainActivity).addShoe(it)
+        })
 
         setHasOptionsMenu(true)
 
@@ -83,7 +83,6 @@ class ShoeListFragment : Fragment() {
     {
         for(shoe in shoeList)
         {
-            //var shoeRowView = createShoeView(shoe)
             var shoeRowView = createShoeCardView(shoe)
             binding.llListShoe.addView(shoeRowView)
         }
